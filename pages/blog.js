@@ -1,5 +1,6 @@
-import { useEffect } from "react";
 import Layout from "../components/Layout";
+import Feed from "../components/Feed";
+import styles from '../styles/Blog.module.css'
 
 const Blog = ({feeds}) => {
 
@@ -15,13 +16,24 @@ const Blog = ({feeds}) => {
   //   queryBlogs()
 
   // }, [])
-  console.log(feeds)
-
+  
   return (
     <Layout
       page={'Blog'}
     >
-      <h1>From Blog</h1>
+      <main className="contenedor">
+        <h2 className="heading">Blog</h2>
+
+        <div className={styles.blog}>
+          {feeds.map(feed => (
+            <Feed
+              key={feed.id}
+              feed={feed}
+            />
+          ))}
+        </div>
+
+      </main>
     </Layout>
   );
 };
@@ -32,10 +44,9 @@ export async function getServerSideProps(){
   const response = await fetch(url)
   const feeds = await response.json()
 
-  console.log(feeds)
   return {
     props: {
-      feeds: feeds
+      feeds: feeds.data
     }
   }
 }
