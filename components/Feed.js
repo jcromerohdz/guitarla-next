@@ -5,7 +5,7 @@ import styles from '../styles/Feed.module.css'
 
 const Feed = ({feed}) => {
   console.log(feed)
-  const {title, summary, image, publishedAt} = feed.attributes
+  const {title, summary, image, publishedAt, url} = feed.attributes
   const { id } = feed
   const imgURL = `http://localhost:1337${image.data.attributes.url}`
   
@@ -22,7 +22,7 @@ const Feed = ({feed}) => {
         <h3>{title}</h3>
         <p className={styles.date}>{dateFormat(publishedAt)}</p>
         <p>{summary}</p>
-        <Link href={`blog/${id}`}>
+        <Link href={`blog/${url}`}>
           <a className={styles.link}>
             Read Feed
           </a>
