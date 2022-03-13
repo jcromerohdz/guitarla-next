@@ -8,7 +8,9 @@ const BlogFeed = ({feed}) => {
   const imgURL = `http://localhost:1337${image.data.attributes.url}`
   
   return (
-    <Layout>
+    <Layout
+      page={title}
+    >
       <main className="contenedor">
         <h1 className="heading">{title}</h1>
         <article className={styles.feed}>
