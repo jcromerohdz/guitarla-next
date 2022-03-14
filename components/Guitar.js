@@ -3,10 +3,8 @@ import Link from 'next/link'
 import styles from '../styles/Guitar.module.css'
 
 const Guitar = ({guitar}) => {
-  console.log('guitar', guitar.attributes)
   const { description, image, name, price, url} = guitar.attributes
   const imageURL = `http://localhost:1337${image.data.attributes.url}`
-  console.log(url)
   return (
     <div className={styles.guitar}>
       <Image layout='responsive' width={180} height={350} src={imageURL} alt={`Guitar Image ${name}`}/>
