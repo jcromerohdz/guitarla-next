@@ -4,7 +4,6 @@ import { dateFormat } from '../helpers'
 import styles from '../styles/Feed.module.css'
 
 const Feed = ({feed}) => {
-  console.log(feed)
   const {title, summary, image, publishedAt, url} = feed.attributes
   const { id } = feed
   const imgURL = `http://localhost:1337${image.data.attributes.url}`

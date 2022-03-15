@@ -1,6 +1,5 @@
 import Layout from "../components/Layout";
-import Feed from "../components/Feed";
-import styles from '../styles/Blog.module.css'
+import BlogList from "./BlogList";
 
 const Blog = ({feeds}) => {
 
@@ -22,17 +21,9 @@ const Blog = ({feeds}) => {
       page={'Blog'}
     >
       <main className="contenedor">
-        <h2 className="heading">Blog</h2>
-
-        <div className={styles.blog}>
-          {feeds.map(feed => (
-            <Feed
-              key={feed.id}
-              feed={feed}
-            />
-          ))}
-        </div>
-
+        <BlogList 
+          feeds={feeds}
+        />
       </main>
     </Layout>
   );
