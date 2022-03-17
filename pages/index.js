@@ -11,6 +11,7 @@ export default function Home({guitars, course, posts}) {
     <div >
       <Layout
         page={'Home'}
+        guitar={guitars.data[3]}
       >
         <main className='contenedor'>
           <h1 className='heading'>Our Collection</h1>
@@ -23,11 +24,11 @@ export default function Home({guitars, course, posts}) {
           course={course}
         />
 
-        <sections className='contenedor'>
+        <section className='contenedor'>
           <BlogList 
-            feeds={posts}
+            feeds={posts.data}
           />
-        </sections>
+        </section>
 
       </Layout>
     </div>

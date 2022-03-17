@@ -8,7 +8,7 @@ const BlogList = ({feeds}) => {
     <>
       <h2 className="heading">Blog</h2>
         <div className={styles.blog}>
-          {feeds.map(feed => (
+          {feeds .map(feed => (
             <Feed
               key={feed.id}
               feed={feed}
