@@ -40,11 +40,18 @@ function MyApp({ Component, pageProps }) {
       setCar(updatedCar)
   }
 
+  const deleteProduct = id => {
+    console.log(id)
+    const deleteCar = car.filter( item => item.id !== id)
+    setCar(deleteCar)
+  }
+
   return <Component 
             {...pageProps} 
             car={car}
             addToCar={addToCar}
             updateQuantity={updateQuantity}
+            deleteProduct={deleteProduct}
           />
 }
 

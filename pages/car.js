@@ -2,7 +2,7 @@ import Layout from '../components/Layout'
 import Image from 'next/dist/client/image'
 import styles from '../styles/Car.module.css'
 
-const Car = ({car, updateQuantity}) => {
+const Car = ({car, updateQuantity, deleteProduct}) => {
   console.log('Carrito', car.length)
   return (
     <Layout page={'Shoping Car'}>
@@ -40,6 +40,13 @@ const Car = ({car, updateQuantity}) => {
                   <p className={styles.price}>$<span>{product.price}</span></p>
                   <p className={styles.subtotal}>Subtotal: $ <span>{product.price * product.quantity}</span></p>
                 </div>
+                <button 
+                  type='button' 
+                  className={styles.delete}
+                  onClick={() => deleteProduct(product.id)}
+                  >
+                    X
+                  </button>
               </div>
             ))
           )}

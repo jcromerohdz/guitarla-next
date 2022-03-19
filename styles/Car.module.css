@@ -17,6 +17,7 @@
   align-items: center;
   border-bottom: 1px solid #cfcfcf;
   padding: 3rem 0;
+  position: relative;
 }
 .product:last-of-type {
   border: none;
@@ -57,4 +58,20 @@
 }
 .subtotal span {
   font-size: 2.4rem;
+}
+.delete {
+  all: unset;
+  position: absolute;
+  top: 3rem;
+  right: 1rem;
+  font-weight: bold;
+  color: var(--blanco );
+  border: 1px solid #cfcfcf;
+  border-radius: 1rem;
+  background-color: #D82148;
+  padding: 1rem;
+}
+.delete:hover {
+  cursor: pointer;
+  background-color: #FF5C8D;
 }
