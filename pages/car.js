@@ -11,7 +11,7 @@ const Car = ({car}) => {
         <div className={styles.car}>
           {car.length === 0 ? 'Empty Car' : (
             car.map(product => (
-              <div key={product.id} classNam={styles.product}>
+              <div key={product.id} className={styles.product}>
                 <div>
                   <Image layout='responsive' width={240} height={480} src={product.image} alt={product.name}/>
 
