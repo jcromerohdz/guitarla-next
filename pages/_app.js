@@ -30,10 +30,21 @@ function MyApp({ Component, pageProps }) {
     }
   }
 
+  const updateQuantity = product => {
+      const updatedCar = car.map( item => {
+        if(item.id === product.id){
+          item.quantity = product.quantity
+        }
+        return item
+      })
+      setCar(updatedCar)
+  }
+
   return <Component 
             {...pageProps} 
             car={car}
             addToCar={addToCar}
+            updateQuantity={updateQuantity}
           />
 }
 
